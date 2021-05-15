@@ -434,10 +434,6 @@ void HWCDisplayBuiltIn::SetBwLimitHint(bool enable) {
   if (attr.fps != curr_refresh_rate_ || attr.smart_panel != is_smart_panel_) {
     int bw_code = GetBwCode(attr);
     int req_data = thermal_bandwidth_client_merge_input_info(bw_code, 0);
-    int error = thermal_bandwidth_client_request(const_cast<char*>(kDisplayBwName), req_data);
-    if (error) {
-      DLOGE("Thermal bandwidth request failed %d", error);
-    }
     curr_refresh_rate_ = attr.fps;
     is_smart_panel_ = attr.smart_panel;
   }
