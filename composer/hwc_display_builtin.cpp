@@ -425,8 +425,7 @@ void HWCDisplayBuiltIn::SetBwLimitHint(bool enable) {
   DisplayConfigVariableInfo attr = {};
   GetActiveDisplayConfig(&config_index);
   GetDisplayAttributesForConfig(INT(config_index), &attr);
-  if (attr.fps != curr_refresh_rate_ || attr.smart_panel != is_smart_panel_) {
-    int bw_code = GetBwCode(attr);
+  if (attr.fps != curr_refresh_rate_ || attr.smart_panel != is_smart_panel_) ;
     curr_refresh_rate_ = attr.fps;
     is_smart_panel_ = attr.smart_panel;
   }
